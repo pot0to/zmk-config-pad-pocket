@@ -6,7 +6,7 @@ go_to_erea#include <behaviors.dtsi>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 5
 
- {
+/ {
      macros {
         go_to_nav_layer: go_to_nav_layer {
             compatible = "zmk,behavior-macro";
