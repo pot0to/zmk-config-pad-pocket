@@ -220,7 +220,7 @@ go_to_erea#include <behaviors.dtsi>
             bindings = <
                 
             >;
-        }
+        };
 
         doomscroll_layer {
             display-name= "Doomscroll Layer";
@@ -228,7 +228,7 @@ go_to_erea#include <behaviors.dtsi>
                 &td4
                 &td5
             >;
-        }
+        };
 
         ereader_layer {
             display-name= "EReader Layer";
@@ -236,7 +236,7 @@ go_to_erea#include <behaviors.dtsi>
                 &td2
                 &td3
             >;
-        }
+        };
 
         nav_layer {
             display-name= "Navigation Layer";
@@ -244,7 +244,7 @@ go_to_erea#include <behaviors.dtsi>
                 &select_layer
                 &select_layer
             >;
-        } 
+        };
 
         bluetooth_layer { // Layer 1
             display-name = "Bluetooth Functions";
