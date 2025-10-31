@@ -167,16 +167,7 @@
                 &go_to_photo_layer
                 &go_to_doomscroll_layer
                 &go_to_ereader_layer
-            >;
-        };
-
-        select_layer: select_layer {
-            compatible = "zmk,hold-tap";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <
                 &go_to_bluetooth_layer
-                &select_layer_tapdance
             >;
         };
 
