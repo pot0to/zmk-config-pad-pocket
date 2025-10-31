@@ -181,16 +181,6 @@
             display-name = "Hold-Tap Access Bluetooth Settings";
         };
 
-        my_mt1: default_layer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "DEFAULT_LAYER";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <1000>;
-            bindings = <&go_to_default_layer>, <&none>;
-            display-name = "Hold-Tap To Default Layer + Bluetooth 0";
-        };
-
         my_mt3: layer_select {
             compatible = "zmk,behavior-hold-tap";
             label = "Access Layer";
@@ -220,7 +210,7 @@
             // -------------------------------------
             //       |     BT 0     |     BT 1     |
             bindings = <
-                &my_mt1 0 0
+                &go_to_nav_layer
                 &bluetooth_profile_clear
             >;
         };
