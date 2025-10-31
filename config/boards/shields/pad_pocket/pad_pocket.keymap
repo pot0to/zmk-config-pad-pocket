@@ -184,7 +184,7 @@
 
         // Layer 0
         default_layer {
-            display-name = "Media Layer (default)";
+            display-name = "Media Layer default";
             // -------------------------------------
             //       |     Vol -    |     Vol +     |
             bindings = <
