@@ -105,7 +105,7 @@
             timeout-ms = <50>;
             key-positions = <0 1>; // Replace with actual key positions
             bindings = <&go_to_nav_layer>;
-            layers = <1 2 3 4 5>;
+            layers = <0 1 2 3 5>; // everything except layer 4
         };
     };
 
