@@ -39,7 +39,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             // yellow
-            bindings = <&macro_press &to 3>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFR>, <&macro_press &rgb_ug RGB_COLOR_HSB(40, 70, 100)>;
+            bindings = <&macro_press &to 3>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFR>, <&macro_press &rgb_ug RGB_COLOR_HSB(40, 100, 70)>;
         };
 
         go_to_bluetooth_layer: go_to_bluetooth_layer {
