@@ -198,11 +198,10 @@
 
         photo_layer {
             display-name = "Camera Layer";
+            status = "reserved";
             // -------------------------------------
-            //       |     Vol -    |     Vol +     |
-            bindings = <
-                
-            >;
+            //       |              |               |
+            // bindings = < >;
         };
 
         bluetooth_layer { // Layer 1
