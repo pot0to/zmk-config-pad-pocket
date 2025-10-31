@@ -25,21 +25,21 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             // green
-            bindings = <&macro_press &to 1>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFR>, <&macro_press (&rgb_ug RGB_COLOR_HSB(120, 76, 80))>;
+            bindings = <&macro_press &to 1>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFR>, <&macro_press &rgb_ug RGB_COLOR_HSB(120, 76, 80)>;
         };
 
         go_to_doomscroll_layer: go_to_doomscroll_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             // red
-            bindings = <&macro_press &to 2>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFR>, <&macro_press (&rgb_ug RGB_COLOR_HSB(0, 100, 80))>;
+            bindings = <&macro_press &to 2>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFR>, <&macro_press &rgb_ug RGB_COLOR_HSB(0, 100, 80)>;
         };
 
         go_to_ereader_layer: go_to_ereader_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             // yellow
-            bindings = <&macro_press &to 3>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFR>, <&macro_press (&rgb_ug RGB_COLOR_HSB(40, 70, 100))>;
+            bindings = <&macro_press &to 3>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFR>, <&macro_press &rgb_ug RGB_COLOR_HSB(40, 70, 100)>;
         };
 
         go_to_bluetooth_layer: go_to_bluetooth_layer {
