@@ -158,7 +158,7 @@
             display-name = "Scroll Controls Right";
         };
 
-        select_layer_tapdance: select_layer_tapdance {
+        select_layer: select_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
