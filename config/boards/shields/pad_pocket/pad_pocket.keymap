@@ -11,7 +11,7 @@
         go_to_nav_layer: go_to_nav_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &to 4>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_COLOR_HSB(0, 0, 255)>, <&macro_press &rgb_ug RGB_EFF>;
+            bindings = <&macro_press &to 4>, <&macro_press &rgb_ug RGB_OFF>, <&macro_press &rgb_ug RGB_COLOR_HSB(0, 0, 255)>, <&macro_press &rgb_ug RGB_EFF>;
         };
 
         go_to_media_layer: go_to_media_layer {
