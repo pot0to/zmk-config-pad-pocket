@@ -204,6 +204,30 @@
             // bindings = < >;
         };
 
+        doomscroll_layer {
+            display-name= "Doomscroll Layer";
+            bindings = <
+                &td4
+                &td5
+            >;
+        };
+
+        ereader_layer {
+            display-name= "EReader Layer";
+            bindings = <
+                &td2
+                &td3
+            >;
+        };
+
+        nav_layer {
+            display-name= "Navigation Layer";
+            bindings = <
+                &select_layer
+                &select_layer
+            >;
+        };
+
         bluetooth_layer { // Layer 1
             display-name = "Bluetooth Functions";
             // -------------------------------------
@@ -211,26 +235,6 @@
             bindings = <
                 &go_to_nav_layer
                 &bluetooth_profile_clear
-            >;
-        };
-
-        user_layer_1 { // Layer 2
-            display-name = "User 1";
-            // -------------------------------------
-            //       |     None     |     None     |
-            bindings = <
-                &none
-                &none
-            >;
-        };
-
-        user_layer_2 { // Layer 3
-            display-name = "User 2";
-            // -------------------------------------
-            //       |     None     |     None     |
-            bindings = <
-                &none
-                &none
             >;
         };
     };
