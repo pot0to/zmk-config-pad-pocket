@@ -195,17 +195,6 @@
             >;
             display-name = "Select Layer Right";
         };
-
-        td8: bluetooth_left {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <
-                &go_to_media_layer
-                &go_to_ereader_layer
-                &bootloader
-            >;
-        }
     };
 
     keymap {
