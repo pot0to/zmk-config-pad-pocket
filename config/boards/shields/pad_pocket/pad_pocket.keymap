@@ -196,6 +196,15 @@
             >;
         };
 
+        photo_layer {
+            display-name = "Camera Layer";
+            // -------------------------------------
+            //       |     Vol -    |     Vol +     |
+            bindings = <
+                
+            >;
+        };
+
         bluetooth_layer { // Layer 1
             display-name = "Bluetooth Functions";
             // -------------------------------------
