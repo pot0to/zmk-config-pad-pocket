@@ -11,7 +11,6 @@
         go_to_nav_layer: go_to_nav_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            // white rgb breathing
             bindings = <&macro_press &to 4>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_COLOR_HSB(0, 0, 255)>, <&macro_press &rgb_ug RGB_EFF_BREATHING>;
         };
 
