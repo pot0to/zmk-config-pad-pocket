@@ -232,7 +232,7 @@
             // -------------------------------------
             //       |     BT 0     |     BT 1     |
             bindings = <
-                &go_to_nav_layer
+                &studio_unlock
                 &bluetooth_profile_clear
             >;
         };
