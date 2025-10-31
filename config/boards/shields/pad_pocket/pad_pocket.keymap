@@ -95,11 +95,6 @@
 
     combos {
         compatible = "zmk,combos";
-        combo_studio_unlock {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&studio_unlock>;
-        };
 
         combo_go_to_nav_layer {
             timeout-ms = <50>;
@@ -113,7 +108,12 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp C_VOLUME_DOWN>, <&kp C_PREVIOUS>, <&kp C_PLAY_PAUSE>;
+            bindings = <
+                &kp C_VOLUME_DOWN,
+                &kp C_PREVIOUS,
+                &kp C_PLAY_PAUSE,
+                &studio_unlock
+            >;
             display-name = "Media Controls Left";
         };
 
@@ -121,7 +121,12 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp C_VOLUME_UP>, <&kp C_NEXT>, <&kp C_PLAY_PAUSE>;
+            bindings = <
+                &kp C_VOLUME_UP,
+                &kp C_NEXT,
+                &kp C_PLAY_PAUSE,
+                &studio_unlock
+            >;
             display-name = "Media Controls Right";
         };
 
@@ -166,8 +171,14 @@
                 &go_to_photo_layer
                 &go_to_doomscroll_layer
                 &go_to_ereader_layer
-                &go_to_bluetooth_layer
             >;
+        };
+
+        studio_unlock: studio_unlock {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&studio_unlock>;
         };
     };
 
@@ -175,7 +186,7 @@
         compatible = "zmk,keymap";
 
         default_layer { // Layer 0
-            display-name = "Media Layer (default)";
+            display-name = "Media Layer \(default\)";
             // -------------------------------------
             //       |     Vol -    |     Vol +     |
             bindings = <
