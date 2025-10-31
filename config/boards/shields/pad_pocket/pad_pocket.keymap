@@ -159,6 +159,16 @@
         };
 
         select_layer: select_layer {
+            compatible = "zmk,hold-tap";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <
+                &go_to_bluetooth_layer
+                &select_layer_tapdance
+            >;
+        };
+
+        select_layer_tapdance: select_layer_tapdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
