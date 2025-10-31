@@ -6,47 +6,54 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 5
 
+// solid
+// breathing
+// cycle solid rainbow
+// spinning rainbow
+
 / {
      macros {
+
         go_to_nav_layer: go_to_nav_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &to 4>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_COLOR_HSB(0, 0, 100)>, <&macro_press &rgb_ug RGB_EFF>;
+            // spinning rainbow
+            bindings = <&macro_press &to 4>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_COLOR_HSB(0, 0, 100)>, <&macro_press &rgb_ug RGB_EFR>;
+        };
+
+        go_to_nav_layer_from_bluetooth: go_to_nav_layer_from_bluetooth {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            // spinning rainbow
+            bindings = <&macro_press &to 4>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_COLOR_HSB(0, 0, 100)>, <&macro_press &rgb_ug RGB_EFR>, <&macro_press &rgb_ug RGB_EFR>;
         };
 
         go_to_media_layer: go_to_media_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            // purple
-            bindings = <&macro_press &to 0>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFR>, <&macro_press &rgb_ug RGB_COLOR_HSB(275, 100, 100)>; 
-        };
-
-        go_to_photo_layer: go_to_photo_layer {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            // green
-            bindings = <&macro_press &to 1>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFR>, <&macro_press &rgb_ug RGB_COLOR_HSB(120, 76, 80)>;
+            // solid purple
+            bindings = <&macro_press &to 0>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFF>, <&macro_press &rgb_ug RGB_COLOR_HSB(275, 100, 100)>; 
         };
 
         go_to_doomscroll_layer: go_to_doomscroll_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            // red
-            bindings = <&macro_press &to 2>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFR>, <&macro_press &rgb_ug RGB_COLOR_HSB(0, 100, 80)>;
+            // solid red
+            bindings = <&macro_press &to 1>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFF>, <&macro_press &rgb_ug RGB_EFR>, <&macro_press &rgb_ug RGB_COLOR_HSB(0, 100, 80)>;
         };
 
         go_to_ereader_layer: go_to_ereader_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            // yellow
-            bindings = <&macro_press &to 3>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFR>, <&macro_press &rgb_ug RGB_COLOR_HSB(40, 100, 70)>;
+            // solid yellow
+            bindings = <&macro_press &to 2>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFF>, <&macro_press &rgb_ug RGB_EFR>, <&macro_press &rgb_ug RGB_COLOR_HSB(40, 100, 70)>;
         };
 
         go_to_bluetooth_layer: go_to_bluetooth_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            // blue
-            bindings = <&macro_press &to 5>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFR>, <&macro_press &rgb_ug RGB_COLOR_HSB(200, 80, 100)>; 
+            // blue breathing
+            bindings = <&macro_press &to 3>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFF>, <&macro_press &rgb_ug RGB_EFF>, <&macro_press &rgb_ug RGB_COLOR_HSB(200, 80, 100)>; 
         };
 
         double_click: double_click {
@@ -103,9 +110,16 @@
 
         combo_go_to_nav_layer {
             timeout-ms = <50>;
-            key-positions = <0 1>; // Replace with actual key positions
+            key-positions = <0 1>;
             bindings = <&go_to_nav_layer>;
-            layers = <0 1 2 3 5>; // everything except layer 4
+            layers = <0 1 2>; // only works from regular layers
+        };
+
+        combo_go_to_nav_layer_from_bluetooth {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&go_to_nav_layer_from_bluetooth>;
+            layers = <3>;
         };
     };
 
@@ -126,23 +140,7 @@
             display-name = "Media Controls Right";
         };
 
-        td2: page_turner_controls_left {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&kp LEFT_ARROW>, <&kp DOWN_ARROW>;
-            display-name = "Page Turner Controls Left";
-        };
-
-        td3: page_turner_controls_right {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&kp RIGHT_ARROW>, <&kp UP_ARROW>, <&kp ESC>;
-            display-name = "Page Turner Controls Right";
-        };
-
-        td4: scroll_controls_left {
+        td2: scroll_controls_left {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
@@ -150,7 +148,7 @@
             display-name = "Scroll Controls Left";
         };
 
-        td5: scroll_controls_right {
+        td3: scroll_controls_right {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
@@ -158,32 +156,63 @@
             display-name = "Scroll Controls Right";
         };
 
-        select_layer: select_layer {
+        td4: page_turner_controls_left {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp LEFT_ARROW>, <&kp DOWN_ARROW>;
+            display-name = "Page Turner Controls Left";
+        };
+
+        td5: page_turner_controls_right {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp RIGHT_ARROW>, <&kp UP_ARROW>, <&kp ESC>;
+            display-name = "Page Turner Controls Right";
+        };
+
+        td6: select_layer_left {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings = <
                 &go_to_media_layer
-                &go_to_photo_layer
-                &go_to_doomscroll_layer
                 &go_to_ereader_layer
+                &bootloader
+            >;
+            display-name = "Select Layer Left";
+        };
+
+        td7: select_layer_right {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <
+                &go_to_doomscroll_layer
                 &go_to_bluetooth_layer
                 &bootloader
             >;
+            display-name = "Select Layer Right";
         };
 
-        // studio_unlock: studio_unlock {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <250>;
-        //     bindings = <&studio_unlock>;
-        // };
+        td8: bluetooth_left {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <
+                &go_to_media_layer
+                &go_to_ereader_layer
+                &bootloader
+            >;
+        }
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        // Layer 0
+        // Layer 0 - Media Layer (default)
+        // Solid purple
         default_layer {
             display-name = "Media Layer default";
             // -------------------------------------
@@ -194,43 +223,38 @@
             >;
         };
 
-        // Layer 1
-        photo_layer { 
-            display-name = "Camera Layer";
-            status = "reserved";
-            // -------------------------------------
-            //       |              |               |
-            // bindings = < >;
-        };
-
-        // Layer 2
+        // Layer 1 - Doomscroll Layer
+        // Solid red
         doomscroll_layer {
             display-name= "Doomscroll Layer";
-            bindings = <
-                &td4
-                &td5
-            >;
-        };
-
-        // Layer 3
-        ereader_layer {
-            display-name= "EReader Layer";
             bindings = <
                 &td2
                 &td3
             >;
         };
 
-        // Layer 4
-        nav_layer {
-            display-name= "Navigation Layer";
+        // Layer 2 - EReader Layer
+        // Solid yellow
+        ereader_layer {
+            display-name= "EReader Layer";
             bindings = <
-                &select_layer
-                &select_layer
+                &td4
+                &td5
             >;
         };
 
-        // Layer 5
+        // Layer 3 - Navigation Layer
+        // Rotating rainbow
+        nav_layer {
+            display-name= "Navigation Layer";
+            bindings = <
+                &td6
+                &td7
+            >;
+        };
+
+        // Layer 4 - Bluetooth Layer
+        // Breathing blue
         bluetooth_layer {
             display-name = "Bluetooth Functions";
             // -------------------------------------
