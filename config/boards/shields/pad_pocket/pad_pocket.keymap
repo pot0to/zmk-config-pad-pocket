@@ -125,7 +125,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp C_VOLUME_DOWN>, <&kp C_PREVIOUS>, <&go_to_bluetooth_layer>;
+            bindings = <&kp C_VOLUME_DOWN>, <&kp C_PREVIOUS>, <&kp C_PLAY_PAUSE>;
             display-name = "Media Controls Left";
         };
 
@@ -141,7 +141,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp LEFT_ARROW>, <&kp DOWN_ARROW>, <&go_to_bluetooth_layer>;
+            bindings = <&kp LEFT_ARROW>, <&kp DOWN_ARROW>;
             display-name = "Page Turner Controls Left";
         };
 
@@ -157,7 +157,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&msc SCRL_UP>, <&kp C_PLAY_PAUSE>, <&go_to_bluetooth_layer>;
+            bindings = <&msc SCRL_UP>, <&kp C_PLAY_PAUSE>;
             display-name = "Scroll Controls Left";
         };
 
@@ -169,32 +169,17 @@
             display-name = "Scroll Controls Right";
         };
 
-        td6: custom_right {
+        select_layer: select_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp SPACE>, <&none>, <&go_to_bluetooth_layer>;
-            display-name = "Spacebar Custom Left";
-        };
-
-        my_mt: bluetooth_layer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "BLUETOOTH_LAYER";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <2000>;
-            bindings = <&go_to_bluetooth_layer>, <&kp>;
-            display-name = "Hold-Tap Access Bluetooth Settings";
-        };
-
-        my_mt3: layer_select {
-            compatible = "zmk,behavior-hold-tap";
-            label = "Access Layer";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <300>;
-            bindings = <&mo>, <&kp>;
-            display-name = "Hold-Tap Change Layer";
+            bindings = <
+                &go_to_media_layer
+                &go_to_photo_layer
+                &go_to_doomscroll_layer
+                &go_to_ereader_layer
+                &go_to_bluetooth_layer
+            >;
         };
     };
 
