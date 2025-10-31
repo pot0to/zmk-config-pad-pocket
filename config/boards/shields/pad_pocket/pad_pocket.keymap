@@ -108,7 +108,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp C_VOLUME_DOWN>, <&kp C_PREVIOUS>, <&kp C_PLAY_PAUSE>, <&studio_unlock>;
+            bindings = <&kp C_VOLUME_DOWN>, <&kp C_PREVIOUS>, <&kp C_PLAY_PAUSE>;
             display-name = "Media Controls Left";
         };
 
@@ -116,7 +116,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp C_VOLUME_UP>, <&kp C_NEXT>, <&kp C_PLAY_PAUSE>, <&studio_unlock>;
+            bindings = <&kp C_VOLUME_UP>, <&kp C_NEXT>, <&kp C_PLAY_PAUSE>;
             display-name = "Media Controls Right";
         };
 
@@ -180,7 +180,7 @@
             // -------------------------------------
             //       |     Vol -    |     Vol +     |
             bindings = <
-                &td0
+                &studio_unlock
                 &td1
             >;
         };
