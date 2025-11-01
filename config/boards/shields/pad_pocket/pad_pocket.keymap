@@ -6,10 +6,7 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 5
 
-// solid
-// breathing
-// cycle solid rainbow
-// spinning rainbow
+// RGB effect order: solid, breathing, cycle solid rainbow, spinning rainbow
 
 / {
      macros {
@@ -179,19 +176,17 @@
             bindings = <
                 &go_to_media_layer
                 &go_to_ereader_layer
-                &bootloader
             >;
             display-name = "Select Layer Left";
         };
 
         td7: select_layer_right {
-            compatible = "zmk,behavior-tap-dance";
+            compatible = "zmk,hold-tap";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <5000>;
             bindings = <
-                &go_to_doomscroll_layer
                 &go_to_bluetooth_layer
-                &bootloader
+                &go_to_doomscroll_layer
             >;
             display-name = "Select Layer Right";
         };
@@ -216,6 +211,8 @@
         // Solid red
         doomscroll_layer {
             display-name= "Doomscroll Layer";
+            // -------------------------------------
+            //       |   Scroll Up  |  Scroll Down  |
             bindings = <
                 &td2
                 &td3
@@ -226,6 +223,8 @@
         // Solid yellow
         ereader_layer {
             display-name= "EReader Layer";
+            // -------------------------------------
+            //       |   Page Back  |  Page Forward |
             bindings = <
                 &td4
                 &td5
@@ -237,7 +236,7 @@
         bluetooth_layer {
             display-name = "Bluetooth Functions";
             // -------------------------------------
-            //       |     BT 0     |     BT 1     |
+            //       |     BT 0     |    BT Clear   |
             bindings = <
                 &studio_unlock
                 &bluetooth_profile_clear
@@ -248,6 +247,8 @@
         // Rotating rainbow
         nav_layer {
             display-name= "Navigation Layer";
+            // -------------------------------------
+            //       |     Nav 0    |     Nav 1    |
             bindings = <
                 &td6
                 &td7
