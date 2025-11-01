@@ -12,6 +12,7 @@ implementation, because I mostly use this with my phone and find it's more
 comfortable to hold in one hand with the keychain pointing up through your
 fingers rather than down and digging into your palm.
 
+Combo both buttons to enter Navigation Layer.
 +-------+-----------------+--------------------+------+------------------+------------------+
 | Layer |      Name       |     Underglow      | Taps |        Up        |       Down       |
 +-------+-----------------+--------------------+------+------------------+------------------+
@@ -77,13 +78,13 @@ fingers rather than down and digging into your palm.
             bindings = <&macro_press &to 3>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFF>, <&macro_press &rgb_ug RGB_EFF>, <&macro_press &rgb_ug RGB_COLOR_HSB(200, 80, 100)>; 
         };
 
-        scroll_back: media_scroll_back {
+        scroll_up: media_scroll_back {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&kp UP_ARROW>;
         };
 
-        scroll_forward: media_scroll_forward {
+        scroll_down: media_scroll_forward {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&kp DOWN_ARROW>;
@@ -177,7 +178,7 @@ fingers rather than down and digging into your palm.
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&scroll_back>, <&kp C_PLAY_PAUSE>;
+            bindings = <&scroll_up>, <&kp C_PLAY_PAUSE>;
             display-name = "Scroll Controls Left";
         };
 
@@ -185,7 +186,7 @@ fingers rather than down and digging into your palm.
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&scroll_forward>, <&double_click>, <&none>;
+            bindings = <&scroll_down>, <&double_click>, <&none>;
             display-name = "Scroll Controls Right";
         };
 
