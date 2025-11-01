@@ -192,14 +192,15 @@
             display-name = "Select Layer Left";
         };
 
-        ht0: select_layer_right {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SELECT_LAYER_RIGHT";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <3000>;
-            bindings = <&go_to_bluetooth_layer>, <&go_to_doomscroll_layer>;
-            display-name = "Hold-Tap Select Layer Right";
+        td7: select_layer_right {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <
+                &go_to_doomscroll_layer
+                &go_to_bluetooth_layer
+            >;
+            display-name = "Select Layer Right";
         };
     };
 
@@ -262,7 +263,7 @@
             //       |     Nav 0    |     Nav 1    |
             bindings = <
                 &td6
-                &ht0
+                &td7
             >;
         };
 
