@@ -130,6 +130,7 @@
     };
 
     behaviors {
+        // stops working if you rename it media_controls_up, no idea why
         td0: media_controls_left {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
