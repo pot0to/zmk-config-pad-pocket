@@ -113,10 +113,19 @@
 
     combos {
         compatible = "zmk,combos";
-        combo_play_pause {
+
+        combo_go_to_nav_layer {
             timeout-ms = <50>;
             key-positions = <0 1>;
-            bindings = <&studio_unlock>;
+            bindings = <&go_to_nav_layer>;
+            layers = <0 1 2>; // only works from regular layers
+        };
+
+        combo_go_to_nav_layer_from_bluetooth {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&go_to_nav_layer_from_bluetooth>;
+            layers = <3>; // only works from bluetooth layer (layer 3)
         };
     };
 
