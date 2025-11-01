@@ -53,6 +53,18 @@
             bindings = <&macro_press &to 3>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_EFF>, <&macro_press &rgb_ug RGB_EFF>, <&macro_press &rgb_ug RGB_COLOR_HSB(200, 80, 100)>; 
         };
 
+        scroll_back: media_scroll_back {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&kp UP_ARROW>;
+        }
+
+        scroll_forward: media_scroll_forward {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&kp DOWN_ARROW>;
+        }
+
         double_click: double_click {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -141,7 +153,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&msc SCRL_UP>, <&kp C_PLAY_PAUSE>;
+            bindings = <&scroll_back>, <&kp C_PLAY_PAUSE>;
             display-name = "Scroll Controls Left";
         };
 
@@ -149,7 +161,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&msc SCRL_DOWN>, <&double_click>, <&none>;
+            bindings = <&scroll_forward>, <&double_click>, <&none>;
             display-name = "Scroll Controls Right";
         };
 
@@ -182,10 +194,12 @@
 
         ht0: select_layer_right {
             compatible = "zmk,behavior-hold-tap";
+            label = "SELECT_LAYER_RIGHT";
             #binding-cells = <2>;
+            flavor = "hold-preferred";
             tapping-term-ms = <3000>;
             bindings = <&go_to_bluetooth_layer>, <&go_to_doomscroll_layer>;
-            display-name = "Select Layer Right";
+            display-name = "Hold-Tap Select Layer Right";
         };
     };
 
