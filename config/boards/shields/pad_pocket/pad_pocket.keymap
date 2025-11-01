@@ -212,6 +212,9 @@
             bindings = <
                 &go_to_doomscroll_layer
                 &go_to_bluetooth_layer
+                &none
+                &none
+                &bootloader
             >;
             display-name = "Select Layer Right";
         };
