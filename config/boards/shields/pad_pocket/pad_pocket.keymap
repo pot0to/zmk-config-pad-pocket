@@ -239,8 +239,10 @@ Combo both buttons to enter Navigation Layer.
         // Solid purple
         default_layer {
             display-name = "Media Layer default";
-            // -------------------------------------
-            //       |     Vol -    |     Vol +     |
+            // ----------------
+            // |     Vol +    |
+            // |     Vol -    |
+            // ----------------
             bindings = <
                 &td0
                 &td1
@@ -251,8 +253,10 @@ Combo both buttons to enter Navigation Layer.
         // Solid red
         doomscroll_layer {
             display-name= "Doomscroll Layer";
-            // -------------------------------------
-            //       |   Scroll Up  |  Scroll Down  |
+            // ----------------
+            // |   Scroll Up  |
+            // |  Scroll Down |
+            // ----------------
             bindings = <
                 &td2
                 &td3
@@ -263,8 +267,10 @@ Combo both buttons to enter Navigation Layer.
         // Solid yellow
         ereader_layer {
             display-name= "EReader Layer";
-            // -------------------------------------
-            //       |   Page Back  |  Page Forward |
+            // ----------------
+            // | Page Forward | 
+            // |   Page Back  |
+            // ----------------
             bindings = <
                 &td4
                 &td5
@@ -275,8 +281,10 @@ Combo both buttons to enter Navigation Layer.
         // Breathing blue
         bluetooth_layer {
             display-name = "Bluetooth Functions";
-            // -------------------------------------
-            //       |     BT 0     |    BT Clear   |
+            // -----------------
+            // |    BT Clear   |
+            // | Studio Unlock |
+            // ----------------
             bindings = <
                 &bluetooth_profile_clear
                 &studio_unlock
@@ -287,8 +295,10 @@ Combo both buttons to enter Navigation Layer.
         // Rotating rainbow
         nav_layer {
             display-name= "Navigation Layer";
-            // -------------------------------------
-            //       |     Nav 0    |     Nav 1    |
+            // ----------------
+            // |     Nav 0    |
+            // |     Nav 1    |
+            // ----------------
             bindings = <
                 &td6
                 &td7
