@@ -23,8 +23,8 @@
         columns = <1>;
 
         map = <
-        //   Key 1 | Key 2
-            RC(1,0) RC(0,0)
+            RC(1,0)
+            RC(0,0)
         >;
 
     };
