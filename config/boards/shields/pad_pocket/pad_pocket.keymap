@@ -186,7 +186,7 @@ Combo both buttons to enter Navigation Layer.
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&scroll_down>, <&double_click>, <&none>;
+            bindings = <&scroll_down>, <&double_click>;
             display-name = "Scroll Controls Down";
         };
 
