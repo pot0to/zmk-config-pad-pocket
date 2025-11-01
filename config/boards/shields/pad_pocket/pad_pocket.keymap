@@ -238,14 +238,14 @@ Combo both buttons to enter Navigation Layer.
         // Layer 0 - Media Layer (default)
         // Solid purple
         default_layer {
-            display-name = "Media Layer default";
+            display-name= "Doomscroll Layer";
             // ----------------
-            // |     Vol +    |
-            // |     Vol -    |
+            // |   Scroll Up  |
+            // |  Scroll Down |
             // ----------------
             bindings = <
-                &td0
-                &td1
+                &td2
+                &td3
             >;
         };
 
