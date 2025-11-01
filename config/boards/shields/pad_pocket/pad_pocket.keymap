@@ -6,18 +6,29 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 5
 
-// Notes:
-// I've swapped left->down and right->up compared to TogKey's original
-// implementation, because I mostly use this with my phone and find it's more
-// comfortable to hold in one hand with the keychain pointing up through your
-// fingers rather than down and digging into your palm.
+/* Notes:
+I've swapped left->down and right->up compared to TogKey's original
+implementation, because I mostly use this with my phone and find it's more
+comfortable to hold in one hand with the keychain pointing up through your
+fingers rather than down and digging into your palm.
 
-// Layers:
-// 0: Media (default), solid purple underglow
-// 1: Doomscroll, solid red underglow
-// 2: EReader, solid yellow underglow
-// 3: Bluetooth, breathing blue underglow
-// 4: Navigation, spinning rainbow underglow
++-------+-----------------+--------------------+------+------------------+------------------+
+| Layer |      Name       |     Underglow      | Taps |        Up        |       Down       |
++-------+-----------------+--------------------+------+------------------+------------------+
+|     0 | Media (default) | Purple             |    1 | VOL +            | VOL -            |
+|       |                 |                    |    2 | PREV             | NEXT             |
+|       |                 |                    |    3 | PLAY/PAUSE       | PLAY/PAUSE       |
+|     1 | Doomscroll      | Red                |    1 | Scroll Up        | Scroll Down      |
+|       |                 |                    |    2 | PLAY/PAUSE       | PLAY/PAUSE       |
+|     2 | EReader         | Yellow             |    1 | RIGHT            | LEFT             |
+|       |                 |                    |    2 | UP               | DOWN             |
+|     3 | Bluetooth       | Blue (Breathing)   |    1 | Clear BT Profile | Studio Unlock    |
+|     4 | Navigation      | Rainbow (Spinning) |    1 | Media Layer      | Doomscroll Layer |
+|       |                 |                    |    2 | EReader Layer    | Bluetooth Layer  |
+|       |                 |                    |    5 |                  | BootLoader       |
++-------+-----------------+--------------------+------+------------------+------------------+
+*/
+
 
 // RGB effect order: solid, breathing, cycle solid rainbow, spinning rainbow
 
@@ -182,16 +193,16 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp LEFT_ARROW>, <&kp DOWN_ARROW>;
-            display-name = "Page Turner Controls Left";
+            bindings = <&kp RIGHT_ARROW>, <&kp UP_ARROW>, <&kp ESC>;
+            display-name = "Page Turner Controls Right";
         };
 
         td5: page_turner_controls_down {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp RIGHT_ARROW>, <&kp UP_ARROW>, <&kp ESC>;
-            display-name = "Page Turner Controls Right";
+            bindings = <&kp LEFT_ARROW>, <&kp DOWN_ARROW>;
+            display-name = "Page Turner Controls Left";
         };
 
         td6: select_layer_up {
@@ -266,8 +277,8 @@
             // -------------------------------------
             //       |     BT 0     |    BT Clear   |
             bindings = <
-                &studio_unlock
                 &bluetooth_profile_clear
+                &studio_unlock
             >;
         };
 
