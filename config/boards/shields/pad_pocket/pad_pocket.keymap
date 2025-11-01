@@ -6,6 +6,18 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 5
 
+// Notes:
+// I've swapped left and right compared to TogKey's original implementation,
+// because I find it's more comfortable to hold with the keychain pointing up
+// through your fingers rather than down and digging into your palm.
+
+// Layers:
+// 0: Media (default), solid purple underglow
+// 1: Doomscroll, solid red underglow
+// 2: EReader, solid yellow underglow
+// 3: Bluetooth, breathing blue underglow
+// 4: Navigation, spinning rainbow underglow
+
 // RGB effect order: solid, breathing, cycle solid rainbow, spinning rainbow
 
 / {
