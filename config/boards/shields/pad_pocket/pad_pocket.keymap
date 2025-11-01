@@ -235,8 +235,14 @@ Combo both buttons to enter Navigation Layer.
     keymap {
         compatible = "zmk,keymap";
 
+        // Layer 0 - Media Layer (default)
+        // Solid purple
         default_layer {
             display-name= "Media Layer default";
+            // ----------------
+            // |     Vol +    |
+            // |     Vol -    |
+            // ----------------
             bindings = <
                 &td0
                 &td1
