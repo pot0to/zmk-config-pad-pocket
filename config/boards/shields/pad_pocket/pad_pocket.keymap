@@ -235,17 +235,11 @@ Combo both buttons to enter Navigation Layer.
     keymap {
         compatible = "zmk,keymap";
 
-        // Layer 0 - Media Layer (default)
-        // Solid purple
         default_layer {
-            display-name= "Doomscroll Layer";
-            // ----------------
-            // |   Scroll Up  |
-            // |  Scroll Down |
-            // ----------------
+            display-name= "Media Layer default";
             bindings = <
-                &td2
-                &td3
+                &td0
+                &td1
             >;
         };
 
