@@ -142,122 +142,140 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp C_VOLUME_UP>, <&kp C_NEXT>, <&kp C_PLAY_PAUSE>;
-            display-name = "Media Controls Right";
+            bindings = <&kp C_VOLUME_DOWN>, <&kp C_NEXT>, <&kp C_PLAY_PAUSE>;
+            display-name = "Media Controls Down";
         };
 
-        td2: page_turner_controls_left {
+        td2: scroll_controls_up {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp LEFT_ARROW>, <&kp DOWN_ARROW>, <&go_to_bluetooth_layer>;
-            display-name = "Page Turner Controls Left";
+            bindings = <&scroll_up>, <&kp C_PLAY_PAUSE>;
+            display-name = "Scroll Controls Up";
         };
 
-        td3: page_turner_controls_right {
+        td3: scroll_controls_down {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&scroll_down>, <&double_click>;
+            display-name = "Scroll Controls Down";
+        };
+
+        td4: page_turner_controls_up {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings = <&kp RIGHT_ARROW>, <&kp UP_ARROW>, <&kp ESC>;
-            display-name = "Page Turner Controls Right";
+            display-name = "Page Turner Controls Forward";
         };
 
-        td4: scroll_controls_left {
+        td5: page_turner_controls_down {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&msc SCRL_UP>, <&kp C_PLAY_PAUSE>, <&go_to_bluetooth_layer>;
-            display-name = "Scroll Controls Left";
+            bindings = <&kp LEFT_ARROW>, <&kp DOWN_ARROW>;
+            display-name = "Page Turner Controls Back";
         };
 
-        td5: scroll_controls_right {
+        td6: select_layer_up {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&msc SCRL_DOWN>, <&double_click>, <&none>;
-            display-name = "Scroll Controls Right";
+            bindings = <
+                &go_to_media_layer
+                &go_to_ereader_layer
+            >;
+            display-name = "Select Layer 0";
         };
 
-        td6: custom_right {
+        td7: select_layer_down {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp SPACE>, <&none>, <&go_to_bluetooth_layer>;
-            display-name = "Spacebar Custom Left";
-        };
-
-        my_mt: bluetooth_layer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "BLUETOOTH_LAYER";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <2000>;
-            bindings = <&go_to_bluetooth_layer>, <&kp>;
-            display-name = "Hold-Tap Access Bluetooth Settings";
-        };
-
-        my_mt1: default_layer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "DEFAULT_LAYER";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <1000>;
-            bindings = <&go_to_nav_layer>, <&none>;
-            display-name = "Hold-Tap To Default Layer + Bluetooth 0";
-        };
-
-        my_mt3: layer_select {
-            compatible = "zmk,behavior-hold-tap";
-            label = "Access Layer";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <300>;
-            bindings = <&mo>, <&kp>;
-            display-name = "Hold-Tap Change Layer";
+            bindings = <
+                &go_to_doomscroll_layer
+                &go_to_bluetooth_layer
+                &none
+                &none
+                &bootloader
+            >;
+            display-name = "Select Layer 1";
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer { // Layer 0
-            display-name = "Default Layer";
-            // -------------------------------------
-            //       |     Vol -    |     Vol +     |
+        // Layer 0 - Media Layer (default)
+        // Solid purple
+        default_layer {
+            display-name= "Media Layer default";
+            // ----------------
+            // |     Vol +    |
+            // |     Vol -    |
+            // ----------------
             bindings = <
                 &td0
                 &td1
             >;
         };
 
-        bluetooth_layer { // Layer 1
+        // Layer 1 - Doomscroll Layer
+        // Solid red
+        doomscroll_layer {
+            display-name= "Doomscroll Layer";
+            // ----------------
+            // |   Scroll Up  |
+            // |  Scroll Down |
+            // ----------------
+            bindings = <
+                &td2
+                &td3
+            >;
+        };
+
+        // Layer 2 - EReader Layer
+        // Solid yellow
+        ereader_layer {
+            display-name= "EReader Layer";
+            // ----------------
+            // | Page Forward | 
+            // |   Page Back  |
+            // ----------------
+            bindings = <
+                &td4
+                &td5
+            >;
+        };
+
+        // Layer 3 - Bluetooth Layer
+        // Breathing blue
+        bluetooth_layer {
             display-name = "Bluetooth Functions";
-            // -------------------------------------
-            //       |     BT 0     |     BT 1     |
+            // -----------------
+            // |    BT Clear   |
+            // | Studio Unlock |
+            // ----------------
             bindings = <
-                &my_mt1 0 0
                 &bluetooth_profile_clear
+                &studio_unlock
             >;
         };
 
-        user_layer_1 { // Layer 2
-            display-name = "User 1";
-            // -------------------------------------
-            //       |     None     |     None     |
+        // Layer 4 - Navigation Layer
+        // Rotating rainbow
+        nav_layer {
+            display-name= "Navigation Layer";
+            // ----------------
+            // |     Nav 0    |
+            // |     Nav 1    |
+            // ----------------
             bindings = <
-                &none
-                &none
+                &td6
+                &td7
             >;
         };
 
-        user_layer_2 { // Layer 3
-            display-name = "User 2";
-            // -------------------------------------
-            //       |     None     |     None     |
-            bindings = <
-                &none
-                &none
-            >;
-        };
     };
  };
