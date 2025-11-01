@@ -119,7 +119,7 @@
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&go_to_nav_layer_from_bluetooth>;
-            layers = <4>;
+            layers = <3>; // only works from bluetooth layer (layer 3)
         };
     };
 
@@ -232,17 +232,7 @@
             >;
         };
 
-        // Layer 3 - Navigation Layer
-        // Rotating rainbow
-        nav_layer {
-            display-name= "Navigation Layer";
-            bindings = <
-                &td6
-                &td7
-            >;
-        };
-
-        // Layer 4 - Bluetooth Layer
+        // Layer 3 - Bluetooth Layer
         // Breathing blue
         bluetooth_layer {
             display-name = "Bluetooth Functions";
@@ -253,5 +243,16 @@
                 &bluetooth_profile_clear
             >;
         };
+
+        // Layer 4 - Navigation Layer
+        // Rotating rainbow
+        nav_layer {
+            display-name= "Navigation Layer";
+            bindings = <
+                &td6
+                &td7
+            >;
+        };
+
     };
  };
