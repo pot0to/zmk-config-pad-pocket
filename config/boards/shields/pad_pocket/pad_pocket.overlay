@@ -4,9 +4,3 @@
     col-gpios = <&xiao_d 0 GPIO_ACTIVE_HIGH>, 
                 <&xiao_d 8 GPIO_ACTIVE_HIGH>;
 };
-
-&rgb_underglow {
-  color-encoding = "HSV";
-  default-color = <275 100 100>; // Neon purple
-  default-effect = "none";
-};
