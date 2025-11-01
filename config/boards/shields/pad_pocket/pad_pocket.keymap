@@ -180,14 +180,11 @@
             display-name = "Select Layer Left";
         };
 
-        td7: select_layer_right {
-            compatible = "zmk,hold-tap";
+        ht0: select_layer_right {
+            compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
-            tapping-term-ms = <5000>;
-            bindings = <
-                &go_to_bluetooth_layer
-                &go_to_doomscroll_layer
-            >;
+            tapping-term-ms = <3000>;
+            bindings = <&go_to_bluetooth_layer>, <&go_to_doomscroll_layer>;
             display-name = "Select Layer Right";
         };
     };
@@ -251,7 +248,7 @@
             //       |     Nav 0    |     Nav 1    |
             bindings = <
                 &td6
-                &td7
+                &ht0
             >;
         };
 
