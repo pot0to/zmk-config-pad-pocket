@@ -130,12 +130,12 @@
     };
 
     behaviors {
-        td0: media_controls_up {
+        td0: media_controls_left {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings = <&kp C_VOLUME_UP>, <&kp C_PREVIOUS>, <&kp C_PLAY_PAUSE>;
-            display-name = "Media Controls Up";
+            display-name = "Media Controls Left";
         };
 
         td1: media_controls_right {
