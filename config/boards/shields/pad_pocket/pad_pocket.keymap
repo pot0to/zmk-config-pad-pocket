@@ -18,7 +18,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             // spinning rainbow
-            bindings = <&macro_press &to 4>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_COLOR_HSB(0, 0, 100)>, <&macro_press &rgb_ug RGB_EFR>;
+            bindings = <&macro_press &to 4>, <&macro_press &rgb_ug RGB_ON>, <&macro_press &rgb_ug RGB_COLOR_HSB(0, 100, 100)>, <&macro_press &rgb_ug RGB_EFR>;
         };
 
         go_to_nav_layer_from_bluetooth: go_to_nav_layer_from_bluetooth {
