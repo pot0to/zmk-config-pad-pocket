@@ -57,13 +57,13 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&kp UP_ARROW>;
-        }
+        };
 
         scroll_forward: media_scroll_forward {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&kp DOWN_ARROW>;
-        }
+        };
 
         double_click: double_click {
             compatible = "zmk,behavior-macro";
